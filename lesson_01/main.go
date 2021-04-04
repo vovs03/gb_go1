@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	s "strings"
+)
 
 func main() {
-	fmt.Println("Hello, Gophers!")
+	var p = fmt.Println
+	// g = greeting
+	var g = "Hello, Gophers!"
+	p(g, s.Count(g, "o"))
 }
