@@ -11,11 +11,14 @@ import (
 )
 
 func main() {
-	const Pi = 3.14159265358979323846264338327950288419716939937510582097494459
 	// g = greeting
 	var g = "Введите площадь круга"
 	var p = fmt.Println
 
+	//const Pi = 3.14159265358979323846264338327950288419716939937510582097494459
+	const (
+		Pi = math.Pi
+	)
 	p(g) //
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
