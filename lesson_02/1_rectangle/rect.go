@@ -11,7 +11,7 @@ import (
 
 func main() {
 
-	// ======== return inputSide1()
+	// ======== inputSide1()
 
 	var p = fmt.Println
 
@@ -33,7 +33,7 @@ func main() {
 
 	p("Вы ввели ", side1)
 
-	// ======= return inputSide2()
+	// ======= inputSide2()
 
 	p("Введите B: длину стороны прямоугольника - ")
 
