@@ -1,27 +1,28 @@
 package main
 
+// https://ideone.com/L63gQS#comments
+// https://play.golang.org/p/Hcxh9pHS703 - дубликат
 import (
-	"bufio"
 	"fmt"
-	"log"
-	"os"
-	"strconv"
+	"sort"
+	"time"
 )
 
 func main() {
-	arr := [4]int64{}
+	p := fmt.Println
+	s := []int{5, 24, 6, 30, 1, 4} // unsorted
+	p(s)
+	p("---")
 
-	scaner := bufio.NewScanner(os.Stdin)
-	for i := len(arr) - 1; i >= 0; i-- {
-		if scaner.Scan() {
-			n, err := strconv.ParseInt(scaner.Text(), 10, 64)
-			if err != nil {
-				log.Println(err)
-			}
-			arr[i] = n
-		}
-	}
+	time.Sleep(2 * time.Second)
+	sort.Sort(sort.Reverse(sort.IntSlice(s)))
+	p("Отсортировано по убыванию: ", s)
+	// p(s)
 
-	//TODO sort
-	fmt.Println(arr)
+	p("---")
+
+	time.Sleep(2 * time.Second)
+	sort.Sort(sort.IntSlice(s))
+	p("Отсортировано по возрастанию: ", s)
+	//p(s)
 }
