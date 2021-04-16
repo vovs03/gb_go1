@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
 )
 
 func main() {
 	// числа для приёма из консоли + res(результат)
-	var a, b, res float32
-	// op | Operation
+	var a, b, res float64
+	// op = 'Operation'
 	var op string
 
 	p := fmt.Println
@@ -16,11 +17,16 @@ func main() {
 
 	p("Введите первое число: ")
 	s(&a)
+	if a != float64(a) {
+		//break
+		p("Число введено неверно")
+		os.Exit(2)
+	}
 
 	p("Введите второе число: ")
 	s(&b)
 
-	p("Введите арифметическую операцию (+, -, *, /): ")
+	p("Введите арифметическую операцию (+, -, *, /, sqrt): ")
 	s(&op)
 
 	switch op {
@@ -32,6 +38,8 @@ func main() {
 		res = a * b
 	case "/":
 		res = a / b
+	case "sqrt":
+		res = math.Sqrt(a*a + b*b)
 	default:
 		p("Операция выбрана неверно")
 		os.Exit(1)
